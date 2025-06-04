@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <title>Test Site</title>
+</head>
+<body style="background-color: grey;">
+    <p id="text"></p>
+
+    <script>
+        fetch("http://localhost:8000/api/test")
+            .then(res => res.text())
+            .then(msg => document.getElementById("text").innerText = msg)
+            .then(err => console.error(err));
+    </script>
+</body>
