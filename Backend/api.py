@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
+import db_comms as db  #TODO: File run relative to uvicorn? Cannot find this library
 
 app = FastAPI()  # Set up the app section of the program
 
@@ -17,3 +18,9 @@ app.add_middleware(
 @app.get("/api/test", response_class=PlainTextResponse)
 def test_func():
     return "Holy crap this actually works!"
+
+# Request which sends a fixed query to the server for testing, responding with a JSON object
+@app.get("/api/test_db")
+def test_db_conn():
+    db.set_db("School")
+    return db.run_query("SELECT * FROM subjects")
