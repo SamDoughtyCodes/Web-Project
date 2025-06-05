@@ -22,5 +22,4 @@ def test_func():
 # Request which sends a fixed query to the server for testing, responding with a JSON object
 @app.get("/api/test_db")
 def test_db_conn():
-    db.set_db("School")
-    return db.run_query("SELECT * FROM subjects")
+    pass  # TODO: Add stuff here when it doesn't cause an error!
