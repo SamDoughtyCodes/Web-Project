@@ -5,6 +5,7 @@ with 3000 being the port to use
 
 Running the backend:
 uvicorn <file path (no.py)>:app --reload --port 8000
+File path should use dots (i.e. parent.child.file:app)
 Where --reload means the backend will reload when any code changes occur, and --port specifies the backend will run on port 8000
 
 MySQL Server:
