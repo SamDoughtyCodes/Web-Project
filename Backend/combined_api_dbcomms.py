@@ -42,14 +42,14 @@ def run_query(query: str):
     result = cursor.fetchall()
     return result
 
-# Requests ending "/api/test" will call this function, which returns PlainText
-@app.get("/api/test", response_class=PlainTextResponse)
-def test_func():
-    return "Holy crap this actually works!"
-
 # Request which sends a fixed query to the server for testing, responding with a JSON object
 @app.get("/api/test_db")
 def test_db_conn():
     set_db("School")
     result = run_query("SELECT * FROM subjects")
     return result
+
+# Request which sends user and password data
+@app.post("api/test_post")
+def test_post(data):
+    pass  # TODO: Make this function
