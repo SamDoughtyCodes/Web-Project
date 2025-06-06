@@ -1,0 +1,17 @@
+body {
+    background-color: #e5e5f7;
+    background: repeating-linear-gradient( 45deg, #444df767, #444df767 5px, #e5e5f7 5px, #e5e5f7 25px );
+}
+
+#header_bar {
+    background-color: white;
+    padding: 1%;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#login_div {
+    background-color: white;
+    padding: 1%;
+    border-radius: 30px;
+}
