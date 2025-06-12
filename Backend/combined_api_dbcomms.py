@@ -3,6 +3,11 @@ from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from mysql.connector import connect
 
+# Create class to store a form submission object
+class FormSubmission():
+    user: str
+    passw: str
+
 app = FastAPI()  # Set up the app section of the program
 
 # Enforce rules on connections
@@ -51,5 +56,5 @@ def test_db_conn():
 
 # Request which sends user and password data
 @app.post("api/test_post")
-def test_post(data):
+def test_post(data: FormSubmission):
     pass  # TODO: Make this function
